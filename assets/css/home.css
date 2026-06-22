@@ -1,0 +1,365 @@
+/* =========================================================
+   HOME.CSS — styles unique to index.html
+   (hero photo + mini-estimator, services, packages)
+
+   Note: .section-head, .trust-strip, .why-us/.why-grid/.why-card,
+   .reveal, and .final-cta all live in base.css now since they're
+   reused on interior pages (about.html, etc).
+   ========================================================= */
+
+/* hero — background image with a dark espresso overlay for legibility.
+   Drop your own photo at the project root named solar.png (recommended:
+   a wide shot, 1600px+ wide, showing panels/install work — landscape,
+   not too busy in the center since text sits on top of it). */
+.hero {
+  background-image:
+    linear-gradient(
+      160deg,
+      rgba(57, 4, 5, 0.33) 0%,
+      rgba(90, 16, 18, 0.38) 100%
+    ),
+    url('/solar.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+  padding: 78px 0 90px;
+  overflow: hidden;
+  position: relative;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(244, 206, 121, 0.12);
+  border: 1px solid rgba(244, 206, 121, 0.3);
+  padding: 7px 14px;
+  border-radius: 30px;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.2vw, 58px);
+  line-height: 1.12;
+  margin-bottom: 22px;
+}
+.hero h1 em {
+  color: var(--gold);
+  font-style: normal;
+}
+.hero p.lead {
+  font-size: 16.5px;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.hero-trust {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+.hero-trust div {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.hero-trust svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold);
+}
+
+/* hero mini-estimator card */
+.estimator-card {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+.estimator-card .e-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  background: var(--gold);
+  padding: 5px 11px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.estimator-card h3 {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 6px;
+}
+.estimator-card .e-sub {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.est-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.est-option {
+  text-align: left;
+  background: var(--white);
+  border: 1.5px solid #e7dcc6;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+.est-option strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.est-option span {
+  display: block;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.est-option:hover {
+  border-color: var(--gold-deep);
+}
+.est-option.active {
+  border-color: var(--espresso);
+  background: #fff8ea;
+}
+.est-option.active strong {
+  color: var(--espresso);
+}
+.estimator-result {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed #e7dcc6;
+}
+.estimator-result .r-label {
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.estimator-result .r-tier {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 6px;
+}
+.estimator-result .r-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.estimator-note {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* services */
+.services {
+  background: var(--cream);
+  padding: 90px 0;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.service-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 26px;
+  border: 1px solid #f1e7d4;
+}
+.service-card .icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.service-card .icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--espresso);
+}
+.service-card h3 {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 8px;
+}
+.service-card p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.service-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.service-card ul li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--ink);
+}
+.service-card ul li svg {
+  width: 13px;
+  height: 13px;
+  color: var(--gold-deep);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.service-card .learn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--espresso);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.service-card .learn svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* packages */
+.packages {
+  padding: 90px 0;
+}
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pkg-card {
+  border: 1.5px solid #f1e7d4;
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.pkg-card.popular {
+  border-color: var(--espresso);
+  box-shadow: 0 20px 44px rgba(57, 4, 5, 0.12);
+}
+.pkg-badge {
+  position: absolute;
+  top: -13px;
+  right: 28px;
+  background: var(--espresso);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 13px;
+  border-radius: 20px;
+}
+.pkg-card h3 {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 6px;
+}
+.pkg-card .pkg-for {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.pkg-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+.pkg-specs li {
+  display: flex;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--ink);
+  align-items: flex-start;
+}
+.pkg-specs li svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-deep);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.pkg-specs b {
+  color: var(--espresso);
+}
+
+@media (max-width: 980px) {
+  .hero .wrap {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding: 40px 0 60px;
+  }
+  .hero-trust {
+    display: none;
+  }
+  .services-grid,
+  .pkg-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .services-grid,
+  .pkg-grid {
+    grid-template-columns: 1fr;
+  }
+  .est-options {
+    grid-template-columns: 1fr 1fr;
+  }
+}

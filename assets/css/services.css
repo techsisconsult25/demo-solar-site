@@ -1,0 +1,133 @@
+/* =========================================================
+   SERVICES.CSS — styles unique to services.html only.
+   (.page-hero, .section-head, .why-grid/.why-card, .final-cta
+   are reused from base.css.)
+   ========================================================= */
+
+/* process strip */
+.process {
+  padding: 80px 0;
+  background: var(--cream);
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+.process-step {
+  text-align: center;
+  padding: 0 6px;
+}
+.process-step .num {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--espresso);
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.process-step h3 {
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 6px;
+}
+.process-step p {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* detailed service sections */
+.service-detail {
+  padding: 70px 0;
+}
+.service-detail.alt {
+  background: var(--cream);
+}
+.service-detail .wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 880px;
+}
+.service-detail .icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--espresso);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.service-detail .icon-badge svg {
+  width: 26px;
+  height: 26px;
+  color: var(--gold);
+}
+.service-detail h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 10px;
+}
+.service-detail .desc {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  max-width: 560px;
+}
+.service-detail .bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+  margin-bottom: 8px;
+}
+.service-detail .bullets li {
+  display: flex;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink);
+  align-items: flex-start;
+}
+.service-detail .bullets li svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-deep);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.service-detail .cta-row {
+  margin-top: 20px;
+}
+
+@media (max-width: 980px) {
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 18px;
+  }
+}
+@media (max-width: 640px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .service-detail {
+    padding: 50px 0;
+  }
+  .service-detail .wrap {
+    grid-template-columns: 1fr;
+  }
+  .service-detail .bullets {
+    grid-template-columns: 1fr;
+  }
+}

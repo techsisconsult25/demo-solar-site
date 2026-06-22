@@ -1,26 +1,8 @@
-// mobile menu toggle
-const burger = document.getElementById('burgerBtn');
-const navLinks = document.getElementById('navLinks');
-burger.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('mobile-open');
-  burger.setAttribute('aria-expanded', isOpen);
-});
+/* =========================================================
+   HOME.JS — logic specific to index.html only
+   (hero mini-estimator + scroll-reveal animation)
+   ========================================================= */
 
-// mobile dropdown toggle (click instead of hover under 980px)
-document.querySelectorAll('.nav-links > li').forEach((li) => {
-  const link = li.querySelector('a');
-  const dropdown = li.querySelector('.dropdown');
-  if (!dropdown) return;
-  link.addEventListener('click', (e) => {
-    if (window.innerWidth <= 980) {
-      e.preventDefault();
-      const isOpen = li.classList.toggle('open');
-      li.setAttribute('aria-expanded', isOpen);
-    }
-  });
-});
-
-// estimator logic
 const tiers = {
   'off-grid': {
     tier: 'Full Off-Grid System',
@@ -52,7 +34,6 @@ estOptions.forEach((btn) => {
   });
 });
 
-// scroll reveal
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver(
     (entries) => {
