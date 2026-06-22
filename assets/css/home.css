@@ -18,7 +18,7 @@
       rgba(57, 4, 5, 0.33) 0%,
       rgba(90, 16, 18, 0.38) 100%
     ),
-    url('../images/solar.png');
+    url('/assets/images/solar.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
